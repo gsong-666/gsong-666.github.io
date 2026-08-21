@@ -91,10 +91,48 @@
           <div class="card-top"><span>04 / VISION</span><span aria-hidden="true">↗</span></div>
           <div class="project-graphic" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
           <h3>Abnormal Situation Awareness</h3>
-          <p>A real-time deep learning platform that uses pose estimation to detect and localize abnormal pedestrian motion patterns.</p>
+          <p>A real-time safety platform that learns normal pedestrian motion from skeleton trajectories, then detects and localizes risky behavior at railroad grade crossings.</p>
           <ul><li>Computer Vision</li><li>Deep Learning</li><li>Real-time Systems</li></ul>
+          <a class="card-link" href="#abnormal-awareness">Explore project <span aria-hidden="true">↓</span></a>
         </article>
       </div>
+
+      <article class="project-feature" id="abnormal-awareness">
+        <div class="feature-intro">
+          <div class="feature-copy">
+            <p class="feature-label">Featured project / Public-safety AI</p>
+            <h3>Intelligent Abnormal Situation Awareness Platform</h3>
+            <p class="feature-lede">STGCN-PAD models the spatial and temporal relationships among human skeleton keypoints to recognize hazardous pedestrian behaviors such as lingering and squatting. Trained only on normal walking trajectories, it flags unfamiliar motion through reconstruction error and produces visual alerts for the person at risk.</p>
+            <p class="feature-role"><span>My contribution</span> Methodology, formal analysis, and original manuscript; co-contributor to the study concept and investigation.</p>
+            <div class="feature-actions">
+              <a class="button feature-button-primary" href="https://doi.org/10.1007/s10044-024-01382-w" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+              <a class="button feature-button-secondary" href="https://github.com/iMSEL-USC/GNN_gradecrossing" target="_blank" rel="noreferrer">View code <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <dl class="feature-metrics" aria-label="Project performance">
+            <div><dt>88.2%</dt><dd>Frame-level AUC<br>CNN reconstruction</dd></div>
+            <div><dt>3.63 ms</dt><dd>Trajectory inference<br>MLP-Mixer</dd></div>
+            <div><dt>10×</dt><dd>Faster inference<br>than prior work</dd></div>
+            <div><dt>~20 FPS</dt><dd>Online field test<br>processing rate</dd></div>
+          </dl>
+        </div>
+
+        <div class="feature-media">
+          <video controls preload="metadata" poster="abnormal-situation-awareness.webp" aria-label="Demonstration of the abnormal situation awareness platform">
+            <source src="abnormal-situation-awareness.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <p>Field demonstration: camera input, skeleton extraction, motion assessment, and visual/audio alerts at railroad grade crossings.</p>
+        </div>
+
+        <ol class="feature-pipeline" aria-label="STGCN-PAD workflow">
+          <li><span>01</span><strong>Pose extraction</strong><p>Convert each pedestrian into a privacy-conscious sequence of skeleton keypoints.</p></li>
+          <li><span>02</span><strong>Spatiotemporal learning</strong><p>Use ST-GCN layers to capture joint relationships within and across video frames.</p></li>
+          <li><span>03</span><strong>Motion reconstruction</strong><p>Reconstruct normal trajectories with a CNN or faster MLP-Mixer network.</p></li>
+          <li><span>04</span><strong>Risk alert</strong><p>Identify unfamiliar motion from reconstruction error and localize the pedestrian.</p></li>
+        </ol>
+        <p class="feature-citation">G. Song, Y. Qian, and Y. Wang, <em>Pattern Analysis and Applications</em>, 28:2, 2025.</p>
+      </article>
     </section>
 
     <section class="publication-section" id="publications">
