@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generative AI for Battery Electrodes | Ge Song</title>
+  <meta name="description" content="Ge Song's research on generating physically faithful 3D battery-electrode microstructures from 2D reference images.">
+  <meta name="author" content="Ge Song">
+  <meta name="theme-color" content="#081522">
+  <link rel="canonical" href="https://gsong-666.github.io/projects/battery-electrodes.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="project-detail-page project-accent-cyan" id="top">
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Ge Song, home"><span class="brand-mark">GS</span><span>Ge Song</span></a>
+    <nav aria-label="Project navigation"><a href="../index.html#research">All projects</a><a class="nav-contact" href="../index.html#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="project-detail-hero">
+      <div class="section-shell">
+        <a class="back-link" href="../index.html#research">← Back to selected projects</a>
+        <div class="project-hero-grid">
+          <div>
+            <p class="project-kicker">01 / Generative AI · Current research</p>
+            <h1>Generative AI for Battery Electrodes</h1>
+            <p class="project-detail-lede">Generating realistic three-dimensional electrode microstructures from two-dimensional reference images, with validation centered on physical and transport-relevant fidelity.</p>
+            <ul class="project-tags"><li>Generative AI</li><li>Microstructure</li><li>Transport Simulation</li><li>Physical Validation</li></ul>
+          </div>
+          <div class="project-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><span>2D → 3D</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-shell project-detail-content">
+      <section class="project-overview" aria-label="Project overview">
+        <article><p class="detail-label">Challenge</p><h2>3D microstructure data are expensive to acquire.</h2><p>High-resolution three-dimensional characterization is costly and scarce, which limits data-driven microstructure analysis and downstream property prediction.</p></article>
+        <article><p class="detail-label">Research direction</p><h2>Use 2D evidence to construct useful 3D structures.</h2><p>The framework synthesizes 3D battery-electrode microstructures from 2D references and evaluates whether the generated structures preserve physically meaningful morphology.</p></article>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="detail-heading"><p class="detail-label">Method / 01</p><h2>From reference image to simulation-ready structure</h2></div>
+        <ol class="detail-steps">
+          <li><span>01</span><h3>Reference characterization</h3><p>Extract structural evidence from experimentally acquired 2D electrode images.</p></li>
+          <li><span>02</span><h3>3D generation</h3><p>Use a generative model to construct volumetric microstructures consistent with the reference morphology.</p></li>
+          <li><span>03</span><h3>Physical validation</h3><p>Evaluate generated volumes using statistical and topology-aware descriptors instead of visual similarity alone.</p></li>
+          <li><span>04</span><h3>Property workflow</h3><p>Use validated structures to expand scarce datasets for transport simulation and effective-property prediction.</p></li>
+        </ol>
+      </section>
+
+      <section class="project-detail-section detail-split">
+        <div class="detail-heading"><p class="detail-label">Validation / 02</p><h2>Transport-relevant fidelity</h2><p>Generated structures are evaluated against descriptors that reflect both morphology and connectivity.</p></div>
+        <div class="descriptor-list">
+          <div><strong>S2</strong><span>Two-point correlation</span></div>
+          <div><strong>φ</strong><span>Phase fraction</span></div>
+          <div><strong>SSA</strong><span>Specific surface area</span></div>
+          <div><strong>P / τ</strong><span>Percolation and tortuosity</span></div>
+        </div>
+      </section>
+
+      <aside class="project-callout"><p class="detail-label">Research value</p><p>The goal is not merely photorealistic generation. The generated structures must be credible inputs for physics-based transport studies and scalable dataset augmentation.</p></aside>
+
+      <nav class="project-next" aria-label="More projects"><a href="../index.html#research"><span>Project index</span><strong>All selected projects</strong></a><a href="manufacturing-health-monitoring.html"><span>Next project</span><strong>Manufacturing Health Monitoring →</strong></a></nav>
+    </div>
+  </main>
+  <footer><span>Ge Song · Academic Portfolio</span><span>Generative AI × Physical Systems</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abnormal Situation Awareness | Ge Song</title>
+  <meta name="description" content="Ge Song's STGCN-PAD platform for real-time detection and localization of abnormal pedestrian motion at railroad grade crossings.">
+  <meta name="author" content="Ge Song">
+  <meta name="theme-color" content="#081522">
+  <link rel="canonical" href="https://gsong-666.github.io/projects/abnormal-situation-awareness.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="project-detail-page project-accent-violet" id="top">
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Ge Song, home"><span class="brand-mark">GS</span><span>Ge Song</span></a>
+    <nav aria-label="Project navigation"><a href="../index.html#research">All projects</a><a class="nav-contact" href="../index.html#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="project-detail-hero">
+      <div class="section-shell">
+        <a class="back-link" href="../index.html#research">← Back to selected projects</a>
+        <div class="project-hero-grid">
+          <div>
+            <p class="project-kicker">04 / Computer vision · Public-safety AI</p>
+            <h1>Intelligent Abnormal Situation Awareness Platform</h1>
+            <p class="project-detail-lede">A real-time deep-learning platform that learns normal pedestrian motion from skeleton trajectories and detects risky behaviors at railroad grade crossings.</p>
+            <ul class="project-tags"><li>ST-GCN</li><li>Pose Estimation</li><li>Anomaly Detection</li><li>Edge Deployment</li></ul>
+          </div>
+          <div class="project-orbit project-orbit-vision" aria-hidden="true"><i></i><i></i><i></i><i></i><span>STGCN / PAD</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-shell project-detail-content">
+      <section class="project-overview" aria-label="Project overview">
+        <article><p class="detail-label">Safety problem</p><h2>Recognize risky motion, not only pedestrian presence.</h2><p>Lingering, squatting, and other unexpected behaviors near tracks require a system that understands motion patterns and can localize the person at risk.</p></article>
+        <article><p class="detail-label">Learning strategy</p><h2>Train only on normal walking trajectories.</h2><p>OpenPose converts pedestrian behavior into skeleton-coordinate sequences. STGCN-PAD learns their normal spatiotemporal structure and uses reconstruction error to detect unfamiliar motion.</p></article>
+      </section>
+
+      <section class="project-video-section" aria-label="Project demonstration">
+        <div class="detail-heading"><p class="detail-label">Field demonstration / 01</p><h2>From live video to localized alert</h2></div>
+        <video controls preload="metadata" poster="../abnormal-situation-awareness.webp" aria-label="Demonstration of the abnormal situation awareness platform">
+          <source src="../abnormal-situation-awareness.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <p class="media-caption">Camera input, skeleton extraction, motion assessment, and visual/audio alerts in railroad grade-crossing environments.</p>
+      </section>
+
+      <section class="project-detail-section detail-split">
+        <div class="detail-heading"><p class="detail-label">Performance / 02</p><h2>Accuracy-speed tradeoff for field deployment</h2><p>The MLP-Mixer reconstruction option substantially reduces inference time while preserving comparable anomaly-detection performance.</p></div>
+        <dl class="detail-metrics">
+          <div><dt>88.2%</dt><dd>Frame-level AUC<br>CNN reconstruction</dd></div>
+          <div><dt>3.63 ms</dt><dd>Trajectory inference<br>MLP-Mixer</dd></div>
+          <div><dt>10×</dt><dd>Faster inference<br>than prior work</dd></div>
+          <div><dt>~20 FPS</dt><dd>Online field-test<br>processing rate</dd></div>
+        </dl>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="detail-heading"><p class="detail-label">Pipeline / 03</p><h2>STGCN-PAD workflow</h2></div>
+        <ol class="detail-steps">
+          <li><span>01</span><h3>Pose extraction</h3><p>Represent each pedestrian as a sequence of skeleton keypoints rather than raw appearance.</p></li>
+          <li><span>02</span><h3>Spatiotemporal learning</h3><p>Model joint relationships within each frame and across consecutive frames using ST-GCN layers.</p></li>
+          <li><span>03</span><h3>Motion reconstruction</h3><p>Reconstruct normal trajectories through a CNN or faster MLP-Mixer network.</p></li>
+          <li><span>04</span><h3>Risk alert</h3><p>Detect unfamiliar motion from reconstruction error and localize the corresponding pedestrian.</p></li>
+        </ol>
+      </section>
+
+      <section class="project-detail-section detail-split">
+        <div class="detail-heading"><p class="detail-label">Research role / 04</p><h2>My contribution</h2><p>Methodology, formal analysis, and original manuscript; co-contributor to the study concept and investigation.</p></div>
+        <div class="project-links"><a href="https://doi.org/10.1007/s10044-024-01382-w" target="_blank" rel="noreferrer"><span>Peer-reviewed paper</span><strong>Pattern Analysis and Applications ↗</strong></a><a href="https://github.com/iMSEL-USC/GNN_gradecrossing" target="_blank" rel="noreferrer"><span>Open-source implementation</span><strong>View code repository ↗</strong></a></div>
+      </section>
+
+      <nav class="project-next" aria-label="More projects"><a href="geosocial-risk-modeling.html"><span>Previous project</span><strong>← Geosocial Risk Modeling</strong></a><a href="../index.html#research"><span>Project index</span><strong>All selected projects →</strong></a></nav>
+    </div>
+  </main>
+  <footer><span>Ge Song · Academic Portfolio</span><span>Computer Vision × Railroad Safety</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>

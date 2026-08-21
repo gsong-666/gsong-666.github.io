@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manufacturing Health Monitoring | Ge Song</title>
+  <meta name="description" content="Ge Song's edge-AI research on energy-auditing-based health and security monitoring for robots and 3D printers.">
+  <meta name="author" content="Ge Song">
+  <meta name="theme-color" content="#081522">
+  <link rel="canonical" href="https://gsong-666.github.io/projects/manufacturing-health-monitoring.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="project-detail-page project-accent-blue" id="top">
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Ge Song, home"><span class="brand-mark">GS</span><span>Ge Song</span></a>
+    <nav aria-label="Project navigation"><a href="../index.html#research">All projects</a><a class="nav-contact" href="../index.html#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="project-detail-hero">
+      <div class="section-shell">
+        <a class="back-link" href="../index.html#research">← Back to selected projects</a>
+        <div class="project-hero-grid">
+          <div>
+            <p class="project-kicker">02 / Edge AI · Intelligent manufacturing</p>
+            <h1>Manufacturing Health Monitoring</h1>
+            <p class="project-detail-lede">A side-channel energy auditing framework for real-time health, security, and anomaly monitoring in robotic and additive-manufacturing processes.</p>
+            <ul class="project-tags"><li>Edge Computing</li><li>Energy Auditing</li><li>Robotics</li><li>3D Printing</li></ul>
+          </div>
+          <div class="project-orbit project-orbit-square" aria-hidden="true"><i></i><i></i><i></i><i></i><span>EDGE / AI</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-shell project-detail-content">
+      <section class="project-overview" aria-label="Project overview">
+        <article><p class="detail-label">Challenge</p><h2>Monitor equipment without disrupting production.</h2><p>Manufacturing systems need rapid detection of abnormal behavior, but adding specialized internal sensors can be costly, intrusive, or difficult to retrofit.</p></article>
+        <article><p class="detail-label">Approach</p><h2>Use energy consumption as a side-channel signal.</h2><p>Electrical behavior is logged during operation and analyzed by anomaly-detection models deployed near the machine for responsive, in-situ monitoring.</p></article>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="detail-heading"><p class="detail-label">System / 01</p><h2>Data acquisition through edge deployment</h2></div>
+        <ol class="detail-steps detail-steps-three">
+          <li><span>01</span><h3>Energy logging</h3><p>A Raspberry Pi records side-channel energy-consumption data during robotic operation.</p></li>
+          <li><span>02</span><h3>Process integration</h3><p>OctoPrint and ROS are integrated on the Raspberry Pi to observe the operating state of a 3D printer.</p></li>
+          <li><span>03</span><h3>Real-time inference</h3><p>Anomaly-detection models run on NVIDIA Jetson AGX Orin for edge-based health monitoring.</p></li>
+        </ol>
+      </section>
+
+      <section class="project-detail-section detail-split">
+        <div class="detail-heading"><p class="detail-label">Applications / 02</p><h2>One monitoring principle, multiple manufacturing systems</h2><p>The research develops a common energy-auditing perspective across robotic manipulators and additive-manufacturing equipment.</p></div>
+        <div class="application-stack">
+          <article><span>Robot operation</span><h3>Manipulator anomaly detection</h3><p>Learn normal energy patterns and detect deviations associated with abnormal operation.</p></article>
+          <article><span>Additive manufacturing</span><h3>In-situ 3D-printing monitoring</h3><p>Combine process-state information with energy signals for real-time equipment health assessment.</p></article>
+        </div>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="detail-heading"><p class="detail-label">Selected outputs / 03</p><h2>Related publications</h2></div>
+        <ul class="project-publications">
+          <li><span>2025</span><p>An energy auditing system based on learnable positional embedding and edge computing for in-situ monitoring of 3D printing processes.</p></li>
+          <li><span>2024</span><p>U-TFF: A U-Net-based anomaly detection framework for robotic manipulator energy consumption auditing using fast Fourier transform.</p></li>
+          <li><span>2023</span><p>Energy consumption auditing based on a generative adversarial network for anomaly detection of robotic manipulators.</p></li>
+        </ul>
+      </section>
+
+      <nav class="project-next" aria-label="More projects"><a href="battery-electrodes.html"><span>Previous project</span><strong>← Battery Electrodes</strong></a><a href="geosocial-risk-modeling.html"><span>Next project</span><strong>Geosocial Risk Modeling →</strong></a></nav>
+    </div>
+  </main>
+  <footer><span>Ge Song · Academic Portfolio</span><span>Edge AI × Intelligent Manufacturing</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
