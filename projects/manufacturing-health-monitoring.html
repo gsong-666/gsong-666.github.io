@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manufacturing Health Monitoring | Ge Song</title>
-  <meta name="description" content="Ge Song's edge-AI research on energy-auditing-based health and security monitoring for robots and 3D printers.">
+  <meta name="description" content="Ge Song's research on side-channel energy auditing, edge AI, and anomaly monitoring for robotic manipulators and additive manufacturing.">
   <meta name="author" content="Ge Song">
   <meta name="theme-color" content="#081522">
   <link rel="canonical" href="https://gsong-666.github.io/projects/manufacturing-health-monitoring.html">
@@ -27,8 +27,8 @@
           <div>
             <p class="project-kicker">02 / Edge AI · Intelligent manufacturing</p>
             <h1>Manufacturing Health Monitoring</h1>
-            <p class="project-detail-lede">A side-channel energy auditing framework for real-time health, security, and anomaly monitoring in robotic and additive-manufacturing processes.</p>
-            <ul class="project-tags"><li>Edge Computing</li><li>Energy Auditing</li><li>Robotics</li><li>3D Printing</li></ul>
+            <p class="project-detail-lede">A side-channel energy-auditing framework for detecting operational anomalies and cyber-physical risks in robotic and additive-manufacturing processes.</p>
+            <ul class="project-tags"><li>Edge Computing</li><li>Energy Auditing</li><li>Anomaly Detection</li><li>3D Printing</li></ul>
           </div>
           <div class="project-orbit project-orbit-square" aria-hidden="true"><i></i><i></i><i></i><i></i><span>EDGE / AI</span></div>
         </div>
@@ -37,34 +37,67 @@
 
     <div class="section-shell project-detail-content">
       <section class="project-overview" aria-label="Project overview">
-        <article><p class="detail-label">Challenge</p><h2>Monitor equipment without disrupting production.</h2><p>Manufacturing systems need rapid detection of abnormal behavior, but adding specialized internal sensors can be costly, intrusive, or difficult to retrofit.</p></article>
-        <article><p class="detail-label">Approach</p><h2>Use energy consumption as a side-channel signal.</h2><p>Electrical behavior is logged during operation and analyzed by anomaly-detection models deployed near the machine for responsive, in-situ monitoring.</p></article>
+        <article><p class="detail-label">Safety and security problem</p><h2>Monitor equipment without trusting its internal network.</h2><p>Networked manufacturing systems can experience process drift, equipment faults, or malicious manipulation. Internal logs alone may be compromised or may not expose subtle physical changes.</p></article>
+        <article><p class="detail-label">Side-channel strategy</p><h2>Read the machine through its energy signature.</h2><p>An independent energy meter captures power-consumption patterns while semi-supervised models learn normal operation and flag deviations near the machine in real time.</p></article>
+      </section>
+
+      <section class="project-video-section" aria-label="Manufacturing health monitoring presentation">
+        <div class="detail-heading"><p class="detail-label">Research presentation / 01</p><h2>From side-channel sensing to an edge alert</h2><p>This presentation introduces the 3D-printing testbed, anomalous process settings, learnable positional embedding, and both offline and online validation.</p></div>
+        <video controls preload="metadata" poster="../manufacturing-health-monitoring-poster.jpg" aria-label="Presentation of the manufacturing health monitoring system">
+          <source src="../manufacturing-health-monitoring.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <p class="media-caption">Web-optimized presentation · 2 min 36 sec · 3D printer, energy meter, transformer model, and Jetson edge deployment</p>
       </section>
 
       <section class="project-detail-section">
-        <div class="detail-heading"><p class="detail-label">System / 01</p><h2>Data acquisition through edge deployment</h2></div>
+        <div class="detail-heading"><p class="detail-label">System / 02</p><h2>Independent sensing with edge intelligence</h2></div>
         <ol class="detail-steps detail-steps-three">
-          <li><span>01</span><h3>Energy logging</h3><p>A Raspberry Pi records side-channel energy-consumption data during robotic operation.</p></li>
-          <li><span>02</span><h3>Process integration</h3><p>OctoPrint and ROS are integrated on the Raspberry Pi to observe the operating state of a 3D printer.</p></li>
-          <li><span>03</span><h3>Real-time inference</h3><p>Anomaly-detection models run on NVIDIA Jetson AGX Orin for edge-based health monitoring.</p></li>
+          <li><span>01</span><h3>Side-channel sensing</h3><p>A PZEM-004T energy meter records the 3D printer's electrical behavior outside the printer-control network.</p></li>
+          <li><span>02</span><h3>Minimal coordination</h3><p>A Raspberry Pi running OctoPrint and ROS sends only a process-start trigger; monitoring then proceeds independently.</p></li>
+          <li><span>03</span><h3>Real-time edge inference</h3><p>A Jetson AGX Orin reconstructs normal energy patterns and raises an alert when reconstruction error exceeds the learned threshold.</p></li>
         </ol>
       </section>
 
       <section class="project-detail-section detail-split">
-        <div class="detail-heading"><p class="detail-label">Applications / 02</p><h2>One monitoring principle, multiple manufacturing systems</h2><p>The research develops a common energy-auditing perspective across robotic manipulators and additive-manufacturing equipment.</p></div>
+        <div class="detail-heading"><p class="detail-label">Validated performance / 03</p><h2>Sensitive to process changes that shorten or distort a print</h2><p>The learnable positional embedding captures both local energy patterns and global process duration, allowing the model to detect early terminations that benchmark methods missed.</p></div>
+        <dl class="detail-metrics">
+          <div><dt>~98%</dt><dd>Detection accuracy<br>for early termination cases</dd></div>
+          <div><dt>~88%</dt><dd>Recall<br>across speed and thickness cases</dd></div>
+          <div><dt>+5 mm/s</dt><dd>Detectable printing-speed<br>variation in sensitivity tests</dd></div>
+          <div><dt>+0.02 mm</dt><dd>Detectable layer-thickness<br>variation in sensitivity tests</dd></div>
+        </dl>
+      </section>
+
+      <section class="project-detail-section detail-split">
+        <div class="detail-heading"><p class="detail-label">Applications / 04</p><h2>One monitoring principle across manufacturing systems</h2><p>The research advances from robotic-manipulator auditing to real-time monitoring of additive-manufacturing equipment.</p></div>
         <div class="application-stack">
-          <article><span>Robot operation</span><h3>Manipulator anomaly detection</h3><p>Learn normal energy patterns and detect deviations associated with abnormal operation.</p></article>
-          <article><span>Additive manufacturing</span><h3>In-situ 3D-printing monitoring</h3><p>Combine process-state information with energy signals for real-time equipment health assessment.</p></article>
+          <article><span>Robot operation</span><h3>Manipulator health and security</h3><p>GAN and U-TFF models learn normal energy behavior and detect deviations associated with operational anomalies and physical attacks.</p></article>
+          <article><span>Additive manufacturing</span><h3>In-situ 3D-printing monitoring</h3><p>A transformer with learnable positional embedding detects changes in bed temperature, printing speed, layer thickness, and process duration.</p></article>
         </div>
       </section>
 
       <section class="project-detail-section">
-        <div class="detail-heading"><p class="detail-label">Selected outputs / 03</p><h2>Related publications</h2></div>
+        <div class="detail-heading"><p class="detail-label">Method progression / 05</p><h2>Three generations of energy-auditing models</h2></div>
+        <ol class="detail-steps detail-steps-three">
+          <li><span>2023</span><h3>GAN reconstruction</h3><p>Use normal robotic-manipulator energy traces to train a generative adversarial anomaly detector.</p></li>
+          <li><span>2024</span><h3>U-TFF</h3><p>Fuse time- and frequency-domain features through a U-Net architecture for stronger manipulator monitoring.</p></li>
+          <li><span>2025</span><h3>Learnable position</h3><p>Encode time instants and sliding-window positions so one transformer can detect local and duration-based 3D-print anomalies.</p></li>
+        </ol>
+      </section>
+
+      <section class="project-detail-section" aria-labelledby="manufacturing-publications-title">
+        <div class="detail-heading"><p class="detail-label">Publications / 06</p><h2 id="manufacturing-publications-title">Peer-reviewed research from this project</h2></div>
         <ul class="project-publications">
-          <li><span>2025</span><p>An energy auditing system based on learnable positional embedding and edge computing for in-situ monitoring of 3D printing processes.</p></li>
-          <li><span>2024</span><p>U-TFF: A U-Net-based anomaly detection framework for robotic manipulator energy consumption auditing using fast Fourier transform.</p></li>
-          <li><span>2023</span><p>Energy consumption auditing based on a generative adversarial network for anomaly detection of robotic manipulators.</p></li>
+          <li><span>2025</span><p><a href="https://doi.org/10.1007/s00170-025-16098-2" target="_blank" rel="noreferrer"><strong>An energy auditing system based on learnable positional embedding and edge computing for in-situ monitoring of 3D printing processes.</strong> G. Song, J. Ou, Y. Cao, and Y. Wang. <em>The International Journal of Advanced Manufacturing Technology</em>, vol. 139, pp. 3493–3509. ↗</a></p></li>
+          <li><span>2024</span><p><a href="https://doi.org/10.3390/app14146202" target="_blank" rel="noreferrer"><strong>U-TFF: A U-Net-based anomaly detection framework for robotic manipulator energy consumption auditing using fast Fourier transform.</strong> G. Song, S. H. Hong, T. Kyzer, and Y. Wang. <em>Applied Sciences</em>, vol. 14, no. 14, article 6202. ↗</a></p></li>
+          <li><span>2023</span><p><a href="https://doi.org/10.1016/j.future.2023.07.034" target="_blank" rel="noreferrer"><strong>Energy consumption auditing based on a generative adversarial network for anomaly detection of robotic manipulators.</strong> G. Song, S. H. Hong, T. Kyzer, and Y. Wang. <em>Future Generation Computer Systems</em>, vol. 149, pp. 376–389. ↗</a></p></li>
         </ul>
+      </section>
+
+      <section class="project-detail-section detail-split">
+        <div class="detail-heading"><p class="detail-label">Open resource / 07</p><h2>Reproducible 3D-printing experiments</h2><p>The public repository contains the energy-auditing dataset and implementation associated with the edge-monitoring study.</p></div>
+        <div class="project-links"><a href="https://github.com/iMSEL-USC/3Dprinter_Energy_Auditing" target="_blank" rel="noreferrer"><span>Dataset and implementation</span><strong>View the research repository ↗</strong></a></div>
       </section>
 
       <nav class="project-next" aria-label="More projects"><a href="battery-electrodes.html"><span>Previous project</span><strong>← Battery Electrodes</strong></a><a href="geosocial-risk-modeling.html"><span>Next project</span><strong>Geosocial Risk Modeling →</strong></a></nav>
