@@ -265,3 +265,143 @@ footer a{color:var(--blue)}
   .detail-heading h2{font-size:43px}
   .project-callout{padding:36px 26px}
 }
+
+/* Homepage editorial spread: biography above, academic path and projects below. */
+.hero{
+  grid-template-columns:300px minmax(0,1fr);
+  align-items:start;
+  min-height:auto;
+  gap:58px;
+  padding-block:54px 72px;
+}
+.profile-panel{min-height:0}
+.portrait-frame{
+  width:100%;
+  max-height:none;
+  aspect-ratio:4/5;
+}
+.portrait-frame img{
+  filter:none;
+  object-position:center 46%;
+}
+.hero-copy{padding-top:8px}
+.hero h1{font-size:clamp(80px,8vw,116px)}
+.hero-lede{max-width:760px}
+
+.portfolio-overview{
+  display:grid;
+  grid-template-columns:300px minmax(0,1fr);
+  align-items:start;
+  gap:58px;
+  padding-bottom:112px;
+}
+.portfolio-overview>.section-shell{
+  width:auto;
+  min-width:0;
+}
+.portfolio-overview>.section-block{padding-block:0}
+.portfolio-overview .section-heading{
+  display:block;
+  margin-bottom:30px;
+  padding-bottom:20px;
+}
+.portfolio-overview .section-heading h2{
+  margin-top:10px;
+  font-size:clamp(42px,4vw,58px);
+  line-height:.94;
+}
+.portfolio-overview .section-intro{
+  margin:18px 0 0;
+  font-size:15px;
+  line-height:1.55;
+}
+
+.portfolio-overview .education-item{
+  display:block;
+  padding:25px 0;
+}
+.portfolio-overview .education-year{
+  margin-bottom:13px;
+  font-size:12px;
+}
+.portfolio-overview .education-item h3{
+  margin-bottom:7px;
+  font-size:24px;
+  line-height:1.02;
+}
+.portfolio-overview .school{
+  margin-bottom:15px;
+  font-size:14px;
+  line-height:1.35;
+}
+.portfolio-overview .thesis{
+  display:block;
+  font-size:13px;
+  line-height:1.5;
+}
+.portfolio-overview .thesis span{
+  display:block;
+  margin-bottom:5px;
+}
+
+.portfolio-overview .project-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.portfolio-overview .project-card{
+  min-height:590px;
+  padding:17px 17px 58px;
+}
+.portfolio-overview .card-top{
+  min-height:31px;
+  font-size:9px;
+  line-height:1.35;
+}
+.portfolio-overview .project-graphic{
+  height:auto;
+  aspect-ratio:4/3;
+  margin:16px 0 22px;
+}
+.portfolio-overview .project-card h3{
+  font-size:25px;
+  line-height:.98;
+}
+.portfolio-overview .project-card>p{
+  font-size:14px;
+  line-height:1.5;
+}
+.portfolio-overview .project-card ul{
+  gap:5px 8px;
+  margin-top:18px;
+}
+.portfolio-overview .project-card li,
+.portfolio-overview .project-card li+li{
+  margin-left:0;
+  font-size:9px;
+}
+.portfolio-overview .card-link{
+  right:17px;
+  bottom:19px;
+  font-size:10px;
+}
+
+@media(max-width:1100px){
+  .hero,.portfolio-overview{
+    grid-template-columns:260px minmax(0,1fr);
+    gap:40px;
+  }
+  .portfolio-overview .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .portfolio-overview .project-card{min-height:530px}
+}
+
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr;gap:36px}
+  .portrait-frame{width:min(84vw,380px);margin-inline:auto}
+  .portfolio-overview{grid-template-columns:1fr;gap:82px}
+  .portfolio-overview .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:520px){
+  .portfolio-overview .project-grid{grid-template-columns:1fr}
+  .portfolio-overview .project-card{min-height:510px}
+}
