@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Generative AI for Battery Electrodes | Ge Song</title>
-  <meta name="description" content="Ge Song's research on generating physically faithful 3D battery-electrode microstructures from 2D reference images.">
+  <meta name="description" content="An ongoing project developing data-efficient, physics-aware methods for scalable analysis of three-dimensional battery-electrode microstructures.">
   <meta name="author" content="Ge Song">
   <meta name="theme-color" content="#081522">
   <link rel="canonical" href="https://gsong-666.github.io/projects/battery-electrodes.html">
@@ -19,53 +19,86 @@
     <a class="brand" href="../index.html" aria-label="Ge Song, home"><span class="brand-mark">GS</span><span>Ge Song</span></a>
     <nav aria-label="Project navigation"><a href="../index.html#research">All projects</a><a class="nav-contact" href="../index.html#contact">Contact</a></nav>
   </header>
+
   <main>
     <section class="project-detail-hero">
       <div class="section-shell">
         <a class="back-link" href="../index.html#research">← Back to selected projects</a>
-        <div class="project-hero-grid">
+        <div class="project-hero-grid project-hero-grid-art">
           <div>
-            <p class="project-kicker">01 / Generative AI · Current research</p>
+            <p class="project-kicker">01 / Ongoing research · Battery materials</p>
             <h1>Generative AI for Battery Electrodes</h1>
-            <p class="project-detail-lede">Generating realistic three-dimensional electrode microstructures from two-dimensional reference images, with validation centered on physical and transport-relevant fidelity.</p>
-            <ul class="project-tags"><li>Generative AI</li><li>Microstructure</li><li>Transport Simulation</li><li>Physical Validation</li></ul>
+            <p class="project-detail-lede">Developing data-efficient, physics-aware methods that reuse local microstructure knowledge to support scalable analysis of larger three-dimensional electrode domains.</p>
+            <ul class="project-tags"><li>Generative AI</li><li>Physics-Aware ML</li><li>Multiscale Modeling</li><li>Battery Materials</li></ul>
           </div>
-          <div class="project-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><span>2D → 3D</span></div>
+          <figure class="project-hero-art">
+            <div class="project-hero-art-frame">
+              <img src="../battery-electrodes-visual.webp" alt="Conceptual porous battery-electrode volume with a continuous physical field and selected high-fidelity regions" width="1536" height="1024">
+            </div>
+            <figcaption><span>Conceptual electrode volume</span><span>Public-facing visualization</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <div class="section-shell project-detail-content">
       <section class="project-overview" aria-label="Project overview">
-        <article><p class="detail-label">Challenge</p><h2>3D microstructure data are expensive to acquire.</h2><p>High-resolution three-dimensional characterization is costly and scarce, which limits data-driven microstructure analysis and downstream property prediction.</p></article>
-        <article><p class="detail-label">Research direction</p><h2>Use 2D evidence to construct useful 3D structures.</h2><p>The framework synthesizes 3D battery-electrode microstructures from 2D references and evaluates whether the generated structures preserve physically meaningful morphology.</p></article>
+        <article>
+          <p class="detail-label">Challenge</p>
+          <h2>Large-scale 3D characterization and simulation are expensive.</h2>
+          <p>Detailed electrode microstructures are costly to acquire, while resolving physics throughout a large domain can require substantial computational effort.</p>
+        </article>
+        <article>
+          <p class="detail-label">Research goal</p>
+          <h2>Extend reliable local knowledge across larger structures.</h2>
+          <p>The project explores how learned microstructure–physics relationships and limited high-fidelity observations can support efficient, physically meaningful large-domain analysis.</p>
+        </article>
       </section>
 
       <section class="project-detail-section">
-        <div class="detail-heading"><p class="detail-label">Method / 01</p><h2>From reference image to simulation-ready structure</h2></div>
-        <ol class="detail-steps">
-          <li><span>01</span><h3>Reference characterization</h3><p>Extract structural evidence from experimentally acquired 2D electrode images.</p></li>
-          <li><span>02</span><h3>3D generation</h3><p>Use a generative model to construct volumetric microstructures consistent with the reference morphology.</p></li>
-          <li><span>03</span><h3>Physical validation</h3><p>Evaluate generated volumes using statistical and topology-aware descriptors instead of visual similarity alone.</p></li>
-          <li><span>04</span><h3>Property workflow</h3><p>Use validated structures to expand scarce datasets for transport simulation and effective-property prediction.</p></li>
-        </ol>
-      </section>
-
-      <section class="project-detail-section detail-split">
-        <div class="detail-heading"><p class="detail-label">Validation / 02</p><h2>Transport-relevant fidelity</h2><p>Generated structures are evaluated against descriptors that reflect both morphology and connectivity.</p></div>
-        <div class="descriptor-list">
-          <div><strong>S2</strong><span>Two-point correlation</span></div>
-          <div><strong>φ</strong><span>Phase fraction</span></div>
-          <div><strong>SSA</strong><span>Specific surface area</span></div>
-          <div><strong>P / τ</strong><span>Percolation and tortuosity</span></div>
+        <div class="detail-heading"><p class="detail-label">Public research scope / 01</p><h2>From local evidence to scalable prediction</h2></div>
+        <div class="data-streams">
+          <article><span>01</span><h3>Local knowledge</h3><p>Learn reusable relationships between electrode morphology and physical behavior at manageable scales.</p></article>
+          <article><span>02</span><h3>Selective evidence</h3><p>Use a limited amount of high-fidelity information where it provides the greatest value.</p></article>
+          <article><span>03</span><h3>Scale bridging</h3><p>Transfer local understanding toward larger and more complex electrode domains.</p></article>
+          <article><span>04</span><h3>Physical consistency</h3><p>Prioritize continuity and credible physics rather than visual realism alone.</p></article>
         </div>
       </section>
 
-      <aside class="project-callout"><p class="detail-label">Research value</p><p>The goal is not merely photorealistic generation. The generated structures must be credible inputs for physics-based transport studies and scalable dataset augmentation.</p></aside>
+      <section class="project-detail-section">
+        <div class="detail-heading"><p class="detail-label">Intended value / 02</p><h2>More information from fewer expensive evaluations</h2></div>
+        <ol class="detail-steps detail-steps-three">
+          <li><span>01</span><h3>Reuse</h3><p>Carry learned local structure–physics knowledge into new analysis tasks.</p></li>
+          <li><span>02</span><h3>Focus</h3><p>Reserve costly characterization and simulation for the most informative regions.</p></li>
+          <li><span>03</span><h3>Scale</h3><p>Support efficient investigation of electrode domains beyond fully resolved small volumes.</p></li>
+        </ol>
+      </section>
+
+      <aside class="project-callout">
+        <p class="detail-label">Research principle</p>
+        <p>The objective is not simply to generate a visually plausible electrode. The reconstructed information must remain useful for physics-aware analysis across scales.</p>
+      </aside>
+
+      <section class="project-detail-section">
+        <div class="detail-heading"><p class="detail-label">Current stage / 03</p><h2>Framework development is ongoing</h2></div>
+        <div class="project-overview">
+          <article>
+            <p class="detail-label">Status</p>
+            <h2>Research design and validation are in progress.</h2>
+            <p>This page intentionally presents only the project motivation, broad direction, and intended engineering value.</p>
+          </article>
+          <article>
+            <p class="detail-label">Publication boundary</p>
+            <h2>Technical details will follow publication.</h2>
+            <p>The model architecture, information-selection strategy, computational workflow, experimental design, and results are withheld while the work is under development.</p>
+          </article>
+        </div>
+      </section>
 
       <nav class="project-next" aria-label="More projects"><a href="../index.html#research"><span>Project index</span><strong>All selected projects</strong></a><a href="manufacturing-health-monitoring.html"><span>Next project</span><strong>Manufacturing Health Monitoring →</strong></a></nav>
     </div>
   </main>
+
   <footer><span>Ge Song · Academic Portfolio</span><span>Generative AI × Physical Systems</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
