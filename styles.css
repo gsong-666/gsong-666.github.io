@@ -24,3 +24,39 @@ nav{font-size:13px}
 .focus-line span,.card-top,.card-link,.feature-label,.feature-pipeline span,.feature-citation,.back-link,.project-kicker,.detail-label,.detail-steps span,.data-streams span,.project-publications span,.pub-toolbar button,.pub-number,.education-year span{font-size:12px}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+
+/* Homepage project-card image and spacing refinement */
+#research .project-grid{
+  align-items:start;
+}
+#research .project-card{
+  display:flex;
+  flex-direction:column;
+  align-self:start;
+  min-height:0;
+  padding-bottom:25px;
+}
+#research .project-graphic.project-image{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:auto;
+  aspect-ratio:3/2;
+  background:#0a1118;
+}
+#research .project-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+#research .card-link{
+  position:static;
+  align-self:flex-end;
+  margin-top:26px;
+}
+@media(max-width:640px){
+  #research .project-card{min-height:0}
+  #research .card-link{align-self:flex-start}
+}
